@@ -24,6 +24,7 @@ func main() {
 
 	sqlStr := "select id, name, age from user where id=?"
 	mysqlSearch.QueryRowDemo(sqlStr, db)
+	
 	fmt.Println("search more rows")
 	sqlStr1 := "select id, name, age from user where id>?"
 	mysqlSearch.QueryMultiRowDemo(sqlStr1, db)
