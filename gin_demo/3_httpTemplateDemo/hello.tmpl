@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <title> Hello </title>
+    </head>
+    <body>
+        <p>name: {{ .u1.Name }}</p>
+        <p>name: {{ .u1.Age }}</p>
+        <p>name: {{ .m1.name }}</p>
+        <p>name: {{ .m1.age }}</p>
+        <br>
+        {{/* 变量 */}}
+        <p> 变量 </p>
+        {{ $v1 := 100 }}
+        <p> {{ $v1 }} </p>
+        <p> 条件判断 </p>
+        {{ if $v1 }}
+        {{ $v1 }}
+        {{ else }}
+        <p> 啥都没有 </p>
+        {{end}}
+        {{ range $idx, $hobby := .hobby}}
+            <p>{{$idx}}-{{$hobby}}</p>
+        {{end}}
+        <br>
+        <p>with</p>
+        {{with .m1}}
+        <p>name: {{ .name }}</p>
+        <p>name: {{ .age }}</p>
+        {{end}}
+        <br>
+        <p>len</p>
+        <p>{{len .hobby}}</p>
+        <br>
+        <p>and</p>
+        {{if and (eq $v1 100) (lt .u1.Age 20)}}
+        <p>yes</p>
+        {{else}}
+        <p>no</p>
+        {{end}}
+    </body>
+</html>
