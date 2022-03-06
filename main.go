@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"gitee.com/superwhys/GinTest/sqlx_demo"
+	"github.com/superwhys/GinTest/sqlx_demo"
 )
 
 func main() {

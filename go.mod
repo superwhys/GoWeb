@@ -1,4 +1,4 @@
-module gitee.com/superwhys/GinTest
+module github.com/superwhys/GinTest
 
 go 1.16
 
