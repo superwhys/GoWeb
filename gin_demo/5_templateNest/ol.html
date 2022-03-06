@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>嵌套模板</title>
+</head>
+<body>
+    <h1>嵌套另一个文件的模板</h1>
+    <hr>
+    {{template "ui.tmpl"}}
+    <hr>
+    <h1>模板本地嵌套</h1>
+    <hr>
+    {{template "ol.tmpl"}}
+</body>
+</html>
+{{/* 通过define定一个一个模版 */}}
+{{define "ol.tmpl"}}
+    <ol>
+        <li>吃饭</li>
+        <li>睡觉</li>
+        <li>打豆豆</li>
+    </ol>
+{{end}}
