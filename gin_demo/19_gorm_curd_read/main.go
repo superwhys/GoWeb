@@ -53,4 +53,55 @@ func main() {
 	//// SELECT * FROM users WHERE id = 10;
 	superLog.Info(user)
 
+	db.Where("name=?", "superyong").First(&user)
+	superLog.Info(user)
+
+	db.Where("name=?", "superyong").Find(&users)
+	superLog.Info(users)
+
+	// struct & map
+	superLog.Info("gorm struct and map")
+	db.Where(&UserTable{Name: "superyong", Age: 29}).First(&user)
+	superLog.Info(user)
+
+	db.Where(map[string]interface{}{"name": "superyong", "age": 29}).Find(&users)
+	superLog.Info(users)
+
+	superLog.Info("gorm not")
+	// not
+	db.Not("name", "superyong").First(&user)
+	superLog.Info(user)
+
+	db.Not("gender", []string{"male"}).Find(&users)
+	superLog.Info(users)
+
+	db.Not("name = ?", "superyong").Find(&users)
+	superLog.Info(users)
+
+	db.Not(UserTable{Name: "superyong"}).First(&user)
+	superLog.Info(user)
+
+	superLog.Info("gorm or")
+	db.Where("name = ?", "superyong").Or("gender = ?", "male").Find(&users)
+	superLog.Info(users)
+	db.Where("name = ?", "superyong").Or("age = ?", "29").Find(&users)
+	superLog.Info(users)
+
+	db.FirstOrInit(&user, UserTable{Name: "non_existing"})
+	superLog.Info(user)
+
+	// attrs 如果记录未找到，将使用参数初始化 struct.
+	db.Where(UserTable{Name: "yang"}).Attrs(UserTable{Age: 20}).FirstOrInit(&user)
+	superLog.Info(user)
+
+	// assign 不管记录是否找到，都将参数赋值给 struct.
+	db.Where(UserTable{Name: "yong"}).Assign(UserTable{Age: 20}).FirstOrInit(&user)
+	superLog.Info(user)
+	db.Where(UserTable{Name: "superyong"}).Assign(UserTable{Age: 20}).FirstOrInit(&user)
+	superLog.Info(user)
+
+	superLog.Info("select")
+	var user2 UserTable
+	db.Where(UserTable{Name: "superyong"}).Select("name").First(&user2)
+	superLog.Info(user2)
 }
