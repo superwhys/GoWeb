@@ -26,7 +26,7 @@ func NamedQuery(db *sqlx.DB) {
 	}
 
 	u := mysqlinit.User{
-		Name: "yanghaowen",
+		Name: "zhangsan",
 	}
 	// 使用结构体命名查询，根据结构体字段的 db tag进行映射
 	rows, err = db.NamedQuery(sqlStr, u)

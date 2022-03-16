@@ -22,9 +22,9 @@ func main() {
 	sqlxInsert.InsertRowDemo(sqlxInit.DB)
 	sqlxSearch.QueryRowDemo(sqlxInit.DB, 1)
 	sqlxSearch.QueryMultiRowDemo(sqlxInit.DB, 1)
-	sqlxUpdate.UpdateRowDemo(sqlxInit.DB, 2)
-	sqlxSearch.QueryRowDemo(sqlxInit.DB, 2)
-	sqlxDelete.DeleteRowDemo(sqlxInit.DB, 2)
+	sqlxUpdate.UpdateRowDemo(sqlxInit.DB, 3)
+	sqlxSearch.QueryRowDemo(sqlxInit.DB, 3)
+	sqlxDelete.DeleteRowDemo(sqlxInit.DB, 5)
 	sqlxNameExec.InsertUserDemo(sqlxInit.DB)
 	sqlxNameQuery.NamedQuery(sqlxInit.DB)
 }
