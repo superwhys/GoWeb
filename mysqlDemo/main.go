@@ -10,7 +10,7 @@ import (
 
 func main() {
 
-	//var db *sql.DB
+	//var db *sqlxIn.DB
 
 	dsn := "root@(localhost:3306)/sql_test"
 
