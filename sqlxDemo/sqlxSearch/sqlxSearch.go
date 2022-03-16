@@ -3,7 +3,7 @@ package sqlxSearch
 import (
 	"fmt"
 	"github.com/jmoiron/sqlx"
-	"github.com/superwhys/GinTest/mysqlDemo/mysqlInit"
+	"github.com/superwhys/GoWeb/mysqlDemo/mysqlInit"
 )
 
 // QueryRowDemo 查询单条数据示例

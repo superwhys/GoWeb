@@ -3,7 +3,7 @@ package mysqlSearch
 import (
 	"database/sql"
 	"fmt"
-	"github.com/superwhys/GinTest/mysqlDemo/mysqlInit"
+	"github.com/superwhys/GoWeb/mysqlDemo/mysqlInit"
 )
 
 func QueryRowDemo(sqlStr string, db *sql.DB) {

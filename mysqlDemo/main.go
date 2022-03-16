@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	mysqlinit "github.com/superwhys/GinTest/mysqlDemo/mysqlInit"
-	mysqlSearch "github.com/superwhys/GinTest/mysqlDemo/mysql_search_demo"
-	"github.com/superwhys/GinTest/mysqlDemo/mysqlprepare"
+	mysqlinit "github.com/superwhys/GoWeb/mysqlDemo/mysqlInit"
+	mysqlSearch "github.com/superwhys/GoWeb/mysqlDemo/mysql_search_demo"
+	"github.com/superwhys/GoWeb/mysqlDemo/mysqlprepare"
 	"log"
 )
 

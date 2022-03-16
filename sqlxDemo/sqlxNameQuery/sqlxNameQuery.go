@@ -3,7 +3,7 @@ package sqlxNameQuery
 import (
 	"fmt"
 	"github.com/jmoiron/sqlx"
-	mysqlinit "github.com/superwhys/GinTest/mysqlDemo/mysqlInit"
+	mysqlinit "github.com/superwhys/GoWeb/mysqlDemo/mysqlInit"
 )
 
 func NamedQuery(db *sqlx.DB) {
