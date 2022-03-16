@@ -7,9 +7,9 @@ import (
 )
 
 type User struct {
-	Id int
-	Age int
-	Name string
+	Id   int    `db:"id"`
+	Age  int    `db:"age"`
+	Name string `db:"name"`
 }
 
 var Db *sql.DB
@@ -32,13 +32,6 @@ func InitMysql(dsn string) (err error) {
 
 	fmt.Println("connect to db success")
 	Db.SetMaxOpenConns(100) // 最大连接数
-	Db.SetMaxIdleConns(10) // 最大空闲连接数
+	Db.SetMaxIdleConns(10)  // 最大空闲连接数
 	return nil
 }
-
-//func main () {
-//	dsn := "root:yang4869@tcp(localhost:3306)/test"
-//	if err := InitMysql(dsn); err != nil {
-//		log.Fatalln(err)
-//	}
-//}

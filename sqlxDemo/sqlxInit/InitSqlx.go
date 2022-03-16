@@ -1,4 +1,4 @@
-package sqlx_demo
+package sqlxInit
 
 import (
 	"fmt"
@@ -6,14 +6,16 @@ import (
 	"github.com/jmoiron/sqlx"
 )
 
-func InitDB(dsn string) (*sqlx.DB, error) {
+var DB *sqlx.DB
+
+func InitDB(dsn string) (err error) {
 	// 也可以使用MustConnect, 连接不成功就会panic
-	db, err := sqlx.Connect("mysql", dsn)
+	DB, err = sqlx.Connect("mysql", dsn)
 	if err != nil {
 		fmt.Printf("Connect DB failed, err: %v\n", err)
-		return nil, err
+		return err
 	}
-	db.SetMaxOpenConns(20)
-	db.SetMaxIdleConns(10)
-	return db, nil
+	DB.SetMaxOpenConns(20)
+	DB.SetMaxIdleConns(10)
+	return nil
 }

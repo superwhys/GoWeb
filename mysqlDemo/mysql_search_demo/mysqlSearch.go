@@ -3,7 +3,7 @@ package mysqlSearch
 import (
 	"database/sql"
 	"fmt"
-	mysqlinit "gitee.com/superwhys/GinTest/mysqlInit"
+	"github.com/superwhys/GinTest/mysqlDemo/mysqlInit"
 )
 
 func QueryMultiRowDemo(sqlStr string, db *sql.DB) {

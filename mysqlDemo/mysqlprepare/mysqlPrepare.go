@@ -3,7 +3,7 @@ package mysqlprepare
 import (
 	"database/sql"
 	"fmt"
-	mysqlinit "gitee.com/superwhys/GinTest/mysqlInit"
+	"github.com/superwhys/GinTest/mysqlDemo/mysqlInit"
 )
 
 func MysqlPrepareDemo(sqlStr string, db *sql.DB) {
@@ -30,4 +30,3 @@ func MysqlPrepareDemo(sqlStr string, db *sql.DB) {
 	}
 
 }
-

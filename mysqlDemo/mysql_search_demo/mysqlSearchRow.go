@@ -3,9 +3,8 @@ package mysqlSearch
 import (
 	"database/sql"
 	"fmt"
-	mysqlinit "gitee.com/superwhys/GinTest/mysqlInit"
+	"github.com/superwhys/GinTest/mysqlDemo/mysqlInit"
 )
-
 
 func QueryRowDemo(sqlStr string, db *sql.DB) {
 	var u mysqlinit.User
@@ -17,4 +16,3 @@ func QueryRowDemo(sqlStr string, db *sql.DB) {
 	fmt.Printf("id: %d, name: %s, age: %d\n", u.Id, u.Name, u.Age)
 
 }
-

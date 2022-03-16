@@ -1,16 +1,16 @@
-package sqlx_demo
+package sqlxSearch
 
 import (
 	"fmt"
-	mysqlinit "gitee.com/superwhys/GinTest/mysqlInit"
 	"github.com/jmoiron/sqlx"
+	"github.com/superwhys/GinTest/mysqlDemo/mysqlInit"
 )
 
-// 查询单条数据示例
-func queryRowDemo(db *sqlx.DB) {
+// QueryRowDemo 查询单条数据示例
+func QueryRowDemo(db *sqlx.DB, id int) {
 	sqlStr := "select id, name, age from user where id=?"
 	var u mysqlinit.User
-	err := db.Get(&u, sqlStr, 1)
+	err := db.Get(&u, sqlStr, id)
 	if err != nil {
 		fmt.Printf("get failed, err:%v\n", err)
 		return
@@ -18,11 +18,11 @@ func queryRowDemo(db *sqlx.DB) {
 	fmt.Printf("id:%d name:%s age:%d\n", u.Id, u.Name, u.Age)
 }
 
-// 查询多条数据示例
-func queryMultiRowDemo(db sqlx.DB) {
+// QueryMultiRowDemo 查询多条数据示例
+func QueryMultiRowDemo(db *sqlx.DB, id int) {
 	sqlStr := "select id, name, age from user where id > ?"
 	var users []mysqlinit.User
-	err := db.Select(&users, sqlStr, 0)
+	err := db.Select(&users, sqlStr, id)
 	if err != nil {
 		fmt.Printf("query failed, err:%v\n", err)
 		return
