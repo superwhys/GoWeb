@@ -30,4 +30,6 @@ func main() {
 		u2,
 	}
 	sqlxIn.BatchInsertUsers2(sqlxInit.DB, users)
+
+	sqlxIn.QueryByIDs(sqlxInit.DB, []int{1, 3, 4})
 }

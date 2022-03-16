@@ -33,3 +33,27 @@ func BatchInsertUsers2(db *sqlx.DB, users []interface{}) {
 		return
 	}
 }
+
+// QueryByIDs 根据给定ID查询
+func QueryByIDs(db *sqlx.DB, ids []int) {
+	// 动态填充id
+	query, args, err := sqlx.In("SELECT name, age FROM user WHERE id IN (?)", ids)
+	if err != nil {
+		fmt.Println("in quert error: ", err)
+		return
+	}
+	fmt.Println(query) // 查看生成的querystring
+	fmt.Println(args)  // 查看生成的args
+	// sqlx.In 返回带 `?` bindvar的查询语句, 我们使用Rebind()重新绑定它
+
+	//query = db.Rebind(query)
+	//fmt.Println(query) // 查看生成的querystring
+
+	var users []User
+	err = db.Select(&users, query, args...)
+	if err != nil {
+		fmt.Println("in select error: ", err)
+		return
+	}
+	fmt.Println("user slice is: ", users)
+}
