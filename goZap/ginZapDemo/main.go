@@ -88,7 +88,6 @@ func main() {
 
 	// gin用的是自己日志的中间件，
 	//r := gin.Default()
-
 	r := gin.New()
 	r.Use(GinLogger(zapInit.Logger), GinRecovery(zapInit.Logger, true))
 
