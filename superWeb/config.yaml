@@ -1,0 +1,24 @@
+app:
+  name: "super_app"
+  mode: "dev"
+  port: "9915"
+log:
+  level: "debug"
+  filename: "superWeb.log"
+  max_size: 200
+  max_age: 30
+  max_backup: 7
+mysql:
+  host: "127.0.0.1"
+  port: 3306
+  user: "root"
+  password: ""
+  dbname: "db1"
+  max_connection: 200
+  max_idle_connection: 50
+redis:
+  host: "127.0.0.1"
+  password: ""
+  port: 6379
+  db: 0
+  pool_size: 100
